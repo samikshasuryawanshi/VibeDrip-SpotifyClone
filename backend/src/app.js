@@ -1,12 +1,18 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
+import {connectDB} from './lib/db.js';
+
+
+
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import adminRoutes from './routes/admin.route.js';
 import songRoutes from './routes/songs.route.js';
 import albumRoutes from './routes/albums.route.js';
 import staticRoutes from './routes/static.route.js';
+
 
 
 dotenv.config();
@@ -24,4 +30,5 @@ app.use("/api/stats",staticRoutes);
 
 app.listen(PORT,()=>{
     console.log("Backend server is running on port : " + PORT);
+    connectDB();
 })
