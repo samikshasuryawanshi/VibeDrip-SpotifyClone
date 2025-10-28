@@ -7,7 +7,7 @@ export default function App() {
     <header>
       <SignedOut>
         <SignInButton>
-          <Button>Sign In</Button>
+          <Button>Sign In to VIBEDRIP</Button>
         </SignInButton>
       </SignedOut>
       <SignedIn>
