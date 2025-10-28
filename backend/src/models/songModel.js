@@ -33,4 +33,4 @@ const songSchema = new mongoose.Schema({
 }, { timestamps: true } // added createdAt and updatedAt fields
 );
 
-export default mongoose.model("Song", songSchema);
+export const Song =  mongoose.model("Song", songSchema);
