@@ -1,7 +1,6 @@
 import { User } from "../models/userModel.js";
 
 
-
 export const authCallback = async (req, res) => {
 
     try {
