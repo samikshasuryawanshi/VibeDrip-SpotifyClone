@@ -22,6 +22,6 @@ export const requireAdmin = async (req, res, next) => {
 
 
     } catch (error) {
-        
+        next(error);
     }
 }
