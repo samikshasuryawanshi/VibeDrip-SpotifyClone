@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import {clerkMiddleware} from '@clerk/express';
+import fileUpload from 'express-fileupload';
+import path from 'path';
 
 import {connectDB} from './lib/db.js';
 
@@ -19,11 +21,18 @@ import staticRoutes from './routes/static.route.js';
 dotenv.config();
 
 const app = express();
+const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
 
 app.use(express.json()); // to parse req.body
 app.use(clerkMiddleware());// this will add auth to req object
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: path.join(__dirname, 'uploads'),
+    createParentPath: true,
+    limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB limit
+}));// to handle file uploads
 
 
 app.use("/api/users",userRoutes);
