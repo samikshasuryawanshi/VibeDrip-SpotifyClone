@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     },
     clerkID :{
         type:String,
-        required: true,
+        // required: true,
         unique: true,
     },
     },{ timestamps: true } // added createdAt and updatedAt fields

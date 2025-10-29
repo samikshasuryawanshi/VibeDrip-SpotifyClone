@@ -15,7 +15,7 @@ const AuthCallbackPage = () => {
       try {
 
         if(!isLoaded || !user) return;
-        await axiosInstance.post("/auth-callback",{
+        await axiosInstance.post("/auth/callback",{
           id: user.id,
           firstname: user.firstName,
           lastname: user.lastName,
