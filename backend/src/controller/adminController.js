@@ -2,7 +2,7 @@ import {Song} from "../models/songModel.js";
 import {Album} from "../models/albumModel.js";
 
 
-export const createSong = async (req, res) => {
+export const createSong = async (req, res, next) => {
   try {
     if(!req.files || !req.files.audioFile || !req.files.imageFile){
       return res.status(400).json({message: "Audio file and cover image are required."});
@@ -34,6 +34,6 @@ export const createSong = async (req, res) => {
     
   } catch (error) {
     console.log("Error creating song:", error);
-    res.status(500).json({message: "Internal server error",error});
+    next(error);
   }
 }

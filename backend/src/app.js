@@ -42,6 +42,12 @@ app.use("/api/songs",songRoutes);
 app.use("/api/albums",albumRoutes);
 app.use("/api/stats",staticRoutes);
 
+//error handling middleware
+app.use((err, req, res, next)=>{
+    // console.error(err.stack);
+    res.status(500).json({message: process.env.NODE_ENV === 'production' ? "Internal Server Error": err.message});
+})
+
 
 app.listen(PORT,()=>{
     console.log("Backend server is running on port : " + PORT);
