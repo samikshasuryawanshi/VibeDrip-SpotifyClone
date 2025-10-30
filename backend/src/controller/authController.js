@@ -5,7 +5,7 @@ export const authCallback = async (req, res, next) => {
 
     try {
         const {id,firstName,lastName,imageUrl} = req.body;
-        console.log(id,firstName,lastName,imageUrl);
+        // console.log(id,firstName,lastName,imageUrl);
 
         const user = await User.findOne({clerkId:id});
 

@@ -7,7 +7,7 @@ const Topbar = () => {
     const isAdmin = false; // Replace with actual admin check logic
 
   return (
-    <div className="flex items-center justify-between p-4 sticky top-0 bg-zinc-900/75 z-10 backdrop-blur-md">
+    <div className="flex items-center justify-between p-4 sticky top-0  bg-[linear-gradient(to_right,rgb(20,20,20),rgb(30,30,30),rgb(20,20,20))] shadow-lg  z-10 rounded-md backdrop-blur-md">
        <div className="flex gap-2 items-center">
          VibeDrip
        </div>
