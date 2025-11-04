@@ -1,11 +1,10 @@
-import{Song} from "../models/songModel.js";
-
+import {Song} from "../models/songModel.js";
 
 export const getAllSongs = async (req, res, next) => {
     try {
         //-1 == descending which is the newest -> oldest
         //1 == ascending which is the oldest -> newest
-        const songs = (await Song.find()).sort({createdAt: -1});
+        const songs = await Song.find().sort({createdAt: -1});  // Fixed: removed extra parentheses
         res.status(200).json(songs);
 
     } catch (error) {
@@ -18,7 +17,7 @@ export const getFeaturedSongs = async (req, res, next) => {
         //fetch random songs from mongodb aggregation pipeline
         const songs = await Song.aggregate([
             {$sample: {size: 10}},
-            {$project: {_id: 1,title: 1, artist: 1,imageUrl: 1, audioUrl: 1}}
+            {$project: {_id: 1, title: 1, artist: 1, imageUrl: 1, audioUrl: 1}}
         ]);
 
         res.status(200).json(songs);
@@ -28,11 +27,11 @@ export const getFeaturedSongs = async (req, res, next) => {
 }
 
 export const getMadeForYouSongs = async (req, res, next) => {
- try {
+    try {
         //fetch random songs from mongodb aggregation pipeline
         const songs = await Song.aggregate([
             {$sample: {size: 5}},
-            {$project: {_id: 1,title: 1, artist: 1,imageUrl: 1, audioUrl: 1}}
+            {$project: {_id: 1, title: 1, artist: 1, imageUrl: 1, audioUrl: 1}}
         ]);
 
         res.status(200).json(songs);
@@ -42,11 +41,11 @@ export const getMadeForYouSongs = async (req, res, next) => {
 }
 
 export const getTrendingSongs = async (req, res, next) => {
- try {
+    try {
         //fetch random songs from mongodb aggregation pipeline
         const songs = await Song.aggregate([
             {$sample: {size: 6}},
-            {$project: {_id: 1,title: 1, artist: 1,imageUrl: 1, audioUrl: 1}}
+            {$project: {_id: 1, title: 1, artist: 1, imageUrl: 1, audioUrl: 1}}
         ]);
 
         res.status(200).json(songs);
