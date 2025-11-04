@@ -6,53 +6,53 @@ config();
 
 const songs = [
 	{
-		title: "Stay With Me",
-		artist: "Sarah Mitchell",
-		imageUrl: "/cover-images/1.jpg",
+		title: "Aap se Milkar Acha Laga - Ringtone Version",
+		artist: "Ayushmaan Khuraana",
+		imageUrl: "/cover-images/1.png",
 		audioUrl: "/songs/1.mp3",
-		duration: 46, // 0:46
+		duration: 29, 
 	},
 	{
-		title: "Midnight Drive",
-		artist: "The Wanderers",
-		imageUrl: "/cover-images/2.jpg",
+		title: "Aasan Nahin Yahan",
+		artist: "Arijit Singh",
+		imageUrl: "/cover-images/2.jpeg",
 		audioUrl: "/songs/2.mp3",
-		duration: 41, // 0:41
+		duration: 214, 
 	},
 	{
-		title: "Lost in Tokyo",
-		artist: "Electric Dreams",
-		imageUrl: "/cover-images/3.jpg",
+		title: "Aashiq tera",
+		artist: "Sohail Sen",
+		imageUrl: "/cover-images/3.jpeg",
 		audioUrl: "/songs/3.mp3",
-		duration: 24, // 0:24
+		duration: 42, 
 	},
 	{
-		title: "Summer Daze",
-		artist: "Coastal Kids",
+		title: "Ae Dil Hai Mushkil",
+		artist: "Arijit Singh",
 		imageUrl: "/cover-images/4.jpg",
 		audioUrl: "/songs/4.mp3",
-		duration: 24, // 0:24
+		duration: 269, 
 	},
 	{
-		title: "Neon Lights",
-		artist: "Night Runners",
-		imageUrl: "/cover-images/5.jpg",
+		title: "Tu You",
+		artist: "Armaan Malik",
+		imageUrl: "/cover-images/5.png",
 		audioUrl: "/songs/5.mp3",
-		duration: 36, // 0:36
+		duration: 195,
 	},
 	{
-		title: "Mountain High",
-		artist: "The Wild Ones",
+		title: "Baarish - Half Girlfriend",
+		artist: "Ash King",
 		imageUrl: "/cover-images/6.jpg",
 		audioUrl: "/songs/6.mp3",
-		duration: 40, // 0:40
+		duration: 275,
 	},
 	{
-		title: "City Rain",
-		artist: "Urban Echo",
+		title: "Chahun Main Ya Naa Lofi mix",
+		artist: "Undefined",
 		imageUrl: "/cover-images/7.jpg",
 		audioUrl: "/songs/7.mp3",
-		duration: 39, // 0:39
+		duration: 39,
 	},
 	{
 		title: "Desert Wind",
