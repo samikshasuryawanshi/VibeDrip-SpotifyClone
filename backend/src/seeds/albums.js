@@ -143,42 +143,66 @@ const seedDatabase = async () => {
 				artist: "Various Artists",
 				imageUrl: "/albums/2.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(9, 16).map((song) => song._id),
+=======
+				songs: createdSongs.slice(8, 16).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 			{
 				title: "Midnight Sessions",
 				artist: "Various Artists",
 				imageUrl: "/albums/3.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(17, 24).map((song) => song._id),
+=======
+				songs: createdSongs.slice(16, 24).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 			{
 				title: "Eastern Dreams",
 				artist: "Various Artists",
 				imageUrl: "/albums/4.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(25, 32).map((song) => song._id),
+=======
+				songs: createdSongs.slice(24, 32).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 			{
 				title: "Sunset Vibes",
 				artist: "Various Artists",
 				imageUrl: "/albums/5.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(35, 40).map((song) => song._id),
+=======
+				songs: createdSongs.slice(32, 40).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 			{
 				title: "Golden Hour",
 				artist: "Various Artists",
 				imageUrl: "/albums/6.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(41, 48).map((song) => song._id),
+=======
+				songs: createdSongs.slice(40, 48).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 			{
 				title: "Waves of Serenity",
 				artist: "Various Artists",
 				imageUrl: "/albums/7.png",
 				releaseYear: 2024,
+<<<<<<< HEAD
 				songs: createdSongs.slice(49, 56).map((song) => song._id),
+=======
+				songs: createdSongs.slice(48, 55).map((song) => song._id),
+>>>>>>> d948287ef1164ee84d7308e0b8168a64a12f003e
 			},
 		];
 

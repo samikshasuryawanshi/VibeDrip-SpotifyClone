@@ -16,7 +16,7 @@ const seedSongsWithAlbums = async () => {
 		console.log("Creating songs...");
 
 		// Create all songs first
-		const createdSongs = await Song.insertMany([
+const createdSongs = await Song.insertMany([
 			{
 				title: "Aap se Milkar Acha Laga - Ringtone Version",
 				artist: "Ayushmaan Khuraana",
