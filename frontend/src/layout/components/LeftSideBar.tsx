@@ -63,7 +63,7 @@ const leftSideBar = () => {
         </div>
 
 
-        <ScrollArea className="h-[calc(100vh-300px)]">
+        <ScrollArea className="h-[calc(100vh-250px)]">
             <div className="space-y-2">
                 {isLoading ? <PaylistSkeleton /> : (
                     albums.map((album) => (

@@ -1,6 +1,7 @@
 import {useSignIn} from "@clerk/clerk-react";
 import {Button} from "./ui/button"
 
+import {SiGoogle} from "react-icons/si"
 const SignInOAuthButtons = () => {
     const {signIn,isLoaded} = useSignIn();
     if(!isLoaded) return null;
@@ -13,8 +14,8 @@ const SignInOAuthButtons = () => {
         });
     }
 
-    return <Button onClick={singInWithGoogle} variant={"secondary"} className="w-full cursor-pointer text-white border-zinc-200 h-11">
-        Continue with Google
+    return <Button onClick={singInWithGoogle} variant={"secondary"} className="w-full cursor-pointer text-white border-zinc-200 h-10">
+        <img className="h-5" src="/google.webp" alt="" />
     </Button>
 }
 
