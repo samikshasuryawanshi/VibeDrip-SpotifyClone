@@ -14,7 +14,7 @@ const MainLayout = () =>{
             <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
 
             {/* Main Content */}
-            <ResizablePanel defaultSize={isMobile ? 80 : 60} className="bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))] rounded-md">
+            <ResizablePanel defaultSize={isMobile ? 80 : 60} className=" rounded-md">
                 <Outlet />
             </ResizablePanel>
 
