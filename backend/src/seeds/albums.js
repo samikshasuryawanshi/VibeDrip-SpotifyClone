@@ -136,30 +136,52 @@ const seedDatabase = async () => {
 				artist: "Various Artists",
 				imageUrl: "/albums/1.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(0, 4).map((song) => song._id),
+				songs: createdSongs.slice(0, 8).map((song) => song._id),
 			},
 			{
 				title: "Coastal Dreaming",
 				artist: "Various Artists",
 				imageUrl: "/albums/2.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(4, 8).map((song) => song._id),
+				songs: createdSongs.slice(9, 16).map((song) => song._id),
 			},
 			{
 				title: "Midnight Sessions",
 				artist: "Various Artists",
 				imageUrl: "/albums/3.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(8, 11).map((song) => song._id),
+				songs: createdSongs.slice(17, 24).map((song) => song._id),
 			},
 			{
 				title: "Eastern Dreams",
 				artist: "Various Artists",
 				imageUrl: "/albums/4.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(11, 14).map((song) => song._id),
+				songs: createdSongs.slice(25, 32).map((song) => song._id),
+			},
+			{
+				title: "Sunset Vibes",
+				artist: "Various Artists",
+				imageUrl: "/albums/5.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(35, 40).map((song) => song._id),
+			},
+			{
+				title: "Golden Hour",
+				artist: "Various Artists",
+				imageUrl: "/albums/6.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(41, 48).map((song) => song._id),
+			},
+			{
+				title: "Waves of Serenity",
+				artist: "Various Artists",
+				imageUrl: "/albums/7.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(49, 56).map((song) => song._id),
 			},
 		];
+
 
 		// Insert all albums
 		const createdAlbums = await Album.insertMany(albums);

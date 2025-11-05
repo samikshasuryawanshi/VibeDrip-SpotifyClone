@@ -417,32 +417,53 @@ const seedSongsWithAlbums = async () => {
 		// Create albums with song references
 		const albums = [
 			{
-				title: "Bollywood Hits",
+				title: "Urban Nights",
 				artist: "Various Artists",
 				imageUrl: "/albums/1.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(0, 15).map((song) => song._id), // First 7 songs
+				songs: createdSongs.slice(0, 25).map((song) => song._id),
 			},
 			{
-				title: "Chill Vibes",
+				title: "Coastal Dreaming",
 				artist: "Various Artists",
 				imageUrl: "/albums/2.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(16, 29).map((song) => song._id), // Next 5 songs
+				songs: createdSongs.slice(8, 30).map((song) => song._id),
 			},
 			{
-				title: "Night Sessions",
+				title: "Midnight Sessions",
 				artist: "Various Artists",
 				imageUrl: "/albums/3.png",
 				releaseYear: 2024,
-				songs: createdSongs.slice(17, 45).map((song) => song._id), // Next 4 songs
+				songs: createdSongs.slice(16, 30).map((song) => song._id),
 			},
 			{
-				title: "Urban Dreams",
+				title: "Eastern Dreams",
 				artist: "Various Artists",
 				imageUrl: "/albums/4.png",
-				releaseYear: 2023,
-				songs: createdSongs.slice(46, 56).map((song) => song._id), // Last 2 songs
+				releaseYear: 2024,
+				songs: createdSongs.slice(24, 40).map((song) => song._id),
+			},
+			{
+				title: "Sunset Vibes",
+				artist: "Various Artists",
+				imageUrl: "/albums/5.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(32, 56).map((song) => song._id),
+			},
+			{
+				title: "Golden Hour",
+				artist: "Various Artists",
+				imageUrl: "/albums/6.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(35, 48).map((song) => song._id),
+			},
+			{
+				title: "Waves of Serenity",
+				artist: "Various Artists",
+				imageUrl: "/albums/7.png",
+				releaseYear: 2024,
+				songs: createdSongs.slice(32, 56).map((song) => song._id),
 			},
 		];
 

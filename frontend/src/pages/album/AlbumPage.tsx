@@ -52,15 +52,15 @@ const AlbumPage = () => {
   return (
     <div className="h-screen">
       <ScrollArea className="h-full">
-        <div className="relative min-h-[100vh] bg-gradient-to-b from-[#5038a0]/80 via-zinc-900/80 to-zinc-900 text-white">
+        <div className="relative min-h-[100vh] text-white">
           {/* Background gradient */}
           <div 
-            className="absolute inset-0 bg-gradient-to-b from-[#5038a0]/80 via-zinc-900/80 to-zinc-900 pointer-events-none"
+            className="absolute inset-0 h-[100vh] bg-gradient-to-b from-[#5038a0]/80 via-zinc-900/80 to-zinc-900 pointer-events-none"
             aria-hidden="true"
           />
 
           {/* Content */}
-          <div className="relative z-10 px-4">
+          <div className="relative z-10 ">
             <div className="flex p-6 gap-6 pb-8">
               <img 
                 src={currentAlbum.imageUrl} 
@@ -91,7 +91,7 @@ const AlbumPage = () => {
           </div>
 
           {/* Table section */}
-          <div className="backdrop-blur-sm">
+          <div className="backdrop-blur-sm bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))] ">
             {/* Table header */}
             <div className="grid grid-cols-[16px_4fr_2fr_1fr] gap-4 px-10 py-2 text-sm text-zinc-400 border-b border-white/5">
               <div>#</div>
