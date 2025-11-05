@@ -20,21 +20,21 @@ const createdSongs = await Song.insertMany([
 			{
 				title: "Aap se Milkar Acha Laga - Ringtone Version",
 				artist: "Ayushmaan Khuraana",
-				imageUrl: "/cover-images/1.png",
+				imageUrl: "/cover-images/1.jpg",
 				audioUrl: "/songs/1.mp3",
 				duration: 29,
 			},
 			{
 				title: "Aasan Nahin Yahan",
 				artist: "Arijit Singh",
-				imageUrl: "/cover-images/2.jpeg",
+				imageUrl: "/cover-images/2.jpg",
 				audioUrl: "/songs/2.mp3",
 				duration: 214,
 			},
 			{
 				title: "Aashiq tera",
 				artist: "Sohail Sen",
-				imageUrl: "/cover-images/3.jpeg",
+				imageUrl: "/cover-images/3.jpg",
 				audioUrl: "/songs/3.mp3",
 				duration: 42,
 			},
@@ -48,7 +48,7 @@ const createdSongs = await Song.insertMany([
 			{
 				title: "Tu You",
 				artist: "Armaan Malik",
-				imageUrl: "/cover-images/5.png",
+				imageUrl: "/cover-images/5.jpg",
 				audioUrl: "/songs/5.mp3",
 				duration: 195,
 			},
