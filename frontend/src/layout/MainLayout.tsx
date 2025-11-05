@@ -2,33 +2,54 @@ import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/componen
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "./components/LeftSideBar";
 import FriendsActivity from "./components/FriendsActivity";
+import { ErrorBoundaryWrapper } from "@/components/ErrorBoundaryWrapper";
 
-const MainLayout = () =>{
-    const isMobile = false;
-    return <div className="h-screen bg-black text-white flex flex-col">
-        <ResizablePanelGroup direction="horizontal" className="flex-1 flex h-full overflow-hidden p-2">
-            {/* left SideBar */}
-            <ResizablePanel defaultSize={20} minSize={isMobile ? 0 : 10} maxSize={30} className="bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))] rounded-md p-2">
-                <LeftSideBar />
-            </ResizablePanel>
+const MainLayout = () => {
+  const isMobile = false;
 
-            <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+  return (
+    <div className="h-screen bg-black text-white flex flex-col">
+      <ResizablePanelGroup
+        direction="horizontal"
+        className="flex-1 flex h-full overflow-hidden p-2"
+      >
+        {/* Left Sidebar */}
+        <ResizablePanel
+          defaultSize={20}
+          minSize={isMobile ? 0 : 10}
+          maxSize={30}
+          className="bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))] rounded-md p-2"
+        >
+          <LeftSideBar />
+        </ResizablePanel>
 
-            {/* Main Content */}
-            <ResizablePanel defaultSize={isMobile ? 80 : 60} className=" rounded-md">
-                <Outlet />
-            </ResizablePanel>
+        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
 
-            <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+        {/* Main Content */}
+        <ResizablePanel
+          defaultSize={isMobile ? 80 : 60}
+          className="rounded-md overflow-hidden"
+        >
+          <Outlet />
+        </ResizablePanel>
 
+        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
 
-            {/* Right SideBar */}
-            <ResizablePanel defaultSize={20} minSize={0} maxSize={25} collapsedSize={0} className="bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))]  rounded-md p-2">
-                <FriendsActivity />
-            </ResizablePanel>
-
-
-        </ResizablePanelGroup>
+        {/* Right Sidebar (Friends Activity) */}
+        <ResizablePanel
+          defaultSize={20}
+          minSize={0}
+          maxSize={25}
+          collapsedSize={0}
+          className="bg-[linear-gradient(to_right,rgb(17,17,17),rgb(22,22,22),rgb(17,17,17))] rounded-md p-2"
+        >
+          <ErrorBoundaryWrapper>
+            <FriendsActivity />
+          </ErrorBoundaryWrapper>
+        </ResizablePanel>
+      </ResizablePanelGroup>
     </div>
-}
+  );
+};
+
 export default MainLayout;

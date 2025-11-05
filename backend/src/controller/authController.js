@@ -9,11 +9,14 @@ export const authCallback = async (req, res, next) => {
 
         if(!user){
             //signUp
-            await User.create({
-                clerkID: id,  // Changed from clerkId to clerkID
+            const newUser = await User.create({
+                clerkID: id,
                 fullName: `${firstName} ${lastName}`,
                 imageUrl: imageUrl
-            }); 
+            });
+            console.log("New user created:", newUser);
+        } else {
+            console.log("User already exists:", user);
         }
 
         res.status(200).json({success: true});
