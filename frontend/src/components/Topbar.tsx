@@ -18,9 +18,8 @@ const Topbar = () => {
          {isAdmin && (
             <Link className="flex items-center bg-black/50 shadow-2xl rounded-md p-2" to={"/admin"}>
                 <LayoutDashboardIcon className="size-5" />
-                
             </Link>
-         )}
+         )} 
 
 
          <SignedIn>
