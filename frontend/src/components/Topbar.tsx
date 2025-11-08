@@ -17,7 +17,8 @@ const Topbar = () => {
        <div className="flex items-center gap-4">
          {isAdmin && (
             <Link className="flex items-center bg-black/50 shadow-2xl rounded-md p-2" to={"/admin"}>
-                <LayoutDashboardIcon className="size-5" />
+                <LayoutDashboardIcon className="size-5 mr-2" />
+                Admin Dashboard
             </Link>
          )} 
 
