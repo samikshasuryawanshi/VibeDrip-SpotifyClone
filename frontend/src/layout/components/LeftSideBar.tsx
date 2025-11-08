@@ -22,7 +22,7 @@ const leftSideBar = () => {
    console.log({albums});
 
 
-  return <div className="h-full flex flex-col gap-2">
+  return <div className="full flex flex-col gap-2">
     {/* Navigation menu */}
 
     <div className="rounded-md bg-[linear-gradient(to_right,rgb(25,25,25),rgb(30,30,30),rgb(25,25,25))] shadow-lg p-3">
@@ -63,7 +63,7 @@ const leftSideBar = () => {
         </div>
 
 
-        <ScrollArea className="h-[calc(100vh-250px)]">
+        <ScrollArea className="h-[calc(100vh-285px)]">
             <div className="space-y-2">
                 {isLoading ? <PaylistSkeleton /> : (
                     albums.map((album) => (
