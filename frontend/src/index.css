@@ -136,3 +136,7 @@
 .slider-green [role="slider"] {
   background-color: rgb(1, 105, 39);
 }
+
+.dialog::-webkit-scrollbar{
+  display: none;
+}
