@@ -29,7 +29,16 @@ const httpServer = createServer(app);
 initializeSocket(httpServer);
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: [
+        "http://localhost:3000",
+        "https://vibedrip-sc.web.app",
+        "https://vibedrip-sc.firebaseapp.com"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Content-Type", "Authorization"],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
     credentials: true,
 }));
 

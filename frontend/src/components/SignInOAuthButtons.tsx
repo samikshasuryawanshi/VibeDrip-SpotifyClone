@@ -1,7 +1,6 @@
 import {useSignIn} from "@clerk/clerk-react";
 import {Button} from "./ui/button"
 
-import {SiGoogle} from "react-icons/si"
 const SignInOAuthButtons = () => {
     const {signIn,isLoaded} = useSignIn();
     if(!isLoaded) return null;

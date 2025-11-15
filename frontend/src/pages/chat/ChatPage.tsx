@@ -8,8 +8,11 @@ import ChatHeader from "./components/ChatHeader";
 import MessageInput from "./components/MessageInput";
 
 // simple safe formatter
-const formatTime = (date) =>
-	new Date(date).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+const formatTime = (date: string | Date) => { 
+    const d = new Date(date);
+    return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+};
+
 
 const ChatPage = () => {
 	const { user } = useUser();
@@ -80,11 +83,7 @@ const ChatPage = () => {
 																? user?.imageUrl
 																: selectedUser?.imageUrl
 														}
-														alt={
-															isMe
-																? user?.fullName
-																: selectedUser?.fullName
-														}
+														alt={selectedUser?.fullName ?? ""}
 														className="size-10 rounded-full object-cover"
 													/>
 												</div>

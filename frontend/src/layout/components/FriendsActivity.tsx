@@ -5,11 +5,8 @@ import { HeadphonesIcon, Music, Users } from "lucide-react";
 import { useEffect } from "react";
 
 const FriendsActivity = () => {
-    const {users, isLoading, error, fetchUsers} = useChatStore();
+    const {users, isLoading, error, fetchUsers,onlineUsers,userActivities} = useChatStore();
     const {user} = useUser();
-
-    console.log("Users from store:", users);
-    console.log("Current user:", user);
     
     useEffect(() => {
        if(user) {
@@ -17,8 +14,6 @@ const FriendsActivity = () => {
          fetchUsers();
        }
     }, [fetchUsers, user]);
-
-    const isPlaying = false;
 
     return (
       <div className="h-full rounded-lg flex flex-col">
@@ -54,7 +49,12 @@ const FriendsActivity = () => {
             {!isLoading && !error && users.length > 0 && (
               <ScrollArea className="flex-1">
                 <div className="p-4 space-y-4">
-                  {users.map((user) => (
+                  {users.map((user) => {
+
+                    const activity = userActivities.get(user.clerkId);
+                    const isPlaying = activity && activity !== "Idel";
+                  
+                  return (
                     <div 
                       key={user._id} 
                       className="cursor-pointer hover:bg-zinc-800/50 p-3 rounded-md transition-colors group"
@@ -67,7 +67,12 @@ const FriendsActivity = () => {
                               className="size-10 rounded-full object-cover"
                             />
                           
-                          <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-zinc-900 bg-zinc-500" aria-hidden="true"></div>     
+                          <div 
+                              className={`absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-zinc-900
+                                ${onlineUsers.has(user.clerkId) ? "bg-green-500" : "bg-zinc-500"}
+                                `}
+                              aria-hidden="true"
+                               />     
                         </div>
                         <div className="flex-1 min-w-0">
                              <div className="flex items-center gap-1">
@@ -78,9 +83,11 @@ const FriendsActivity = () => {
                              {isPlaying ? (
                                <div className="mt-1">
                                  <div className=" text-xs text-zinc-300 font-medium truncate">
-                                  Cardigan
+                                  {activity.replace("Playing ", "").split(" by ")[0]}
                                  </div>
-                                 <div className="text-xs text-zinc-400 truncate italic">by Taylor Swift</div>
+                                 <div className="text-xs text-zinc-400 truncate italic">
+                                  {activity.split(" by ")[1]}
+                                 </div>
                                </div>
                              ) : (
                                <div className="mt-1 text-xs text-zinc-400">Idle</div>
@@ -88,7 +95,8 @@ const FriendsActivity = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  )}
+                  )}
                 </div>
               </ScrollArea>
             )}

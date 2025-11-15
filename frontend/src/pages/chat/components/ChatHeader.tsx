@@ -1,6 +1,4 @@
 import { useChatStore } from "@/stores/useChatStore";
-import { useUser } from "@clerk/clerk-react";
-import { useEffect } from "react";
 
 const ChatHeader = () => {
     const { selectedUser, onlineUsers } = useChatStore();
