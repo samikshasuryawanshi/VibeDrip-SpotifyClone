@@ -8,12 +8,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    clerkID :{
+    clerkId :{
         type:String,
         // required: true,
         unique: true,
     },
     },{ timestamps: true } // added createdAt and updatedAt fields
 );
+
+
+console.log(userSchema);
 
 export const User =  mongoose.model("User", userSchema);

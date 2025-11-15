@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Loader } from "lucide-react";
 import { axiosInstance } from "@/lib/axios";
 import { useAuthStore } from "@/stores/useAuthStore";
+import { useChatStore } from "@/stores/useChatStore";
 
 const updateApiToken = (token: string | null) => {
     if (token) {
@@ -13,9 +14,10 @@ const updateApiToken = (token: string | null) => {
 };
 
 const AuthProvider = ({children}: {children: React.ReactNode}) => {
-  const { getToken } = useAuth();
+  const { getToken, userId } = useAuth();
   const [loading,setLoading] = useState(true);
   const {chcekAdminStatus} = useAuthStore();
+  const {initSocket, disconnectSocket} = useChatStore()
 
 
   useEffect(() => {
@@ -26,6 +28,8 @@ const AuthProvider = ({children}: {children: React.ReactNode}) => {
 
             if(token){
                 await chcekAdminStatus();
+                // init socket
+                if(userId) initSocket(userId);
             }
 
 
@@ -37,7 +41,12 @@ const AuthProvider = ({children}: {children: React.ReactNode}) => {
         }
     }
     initAuth()
-  },[getToken])
+
+    // clean up
+    return () => {
+        disconnectSocket();
+    }
+  },[getToken, userId, chcekAdminStatus, initSocket, disconnectSocket])
 
   if (loading) return (
     <div className="h-screen w-full flex items-center justify-center">

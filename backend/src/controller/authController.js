@@ -4,14 +4,14 @@ export const authCallback = async (req, res, next) => {
     try {
         const {id, firstName, lastName, imageUrl} = req.body;
 
-        // Use clerkID (uppercase D) to match the model
-        const user = await User.findOne({clerkID: id});
+        // Use clerkId  to match the model
+        const user = await User.findOne({clerkId: id});
 
         if(!user){
             //signUp
             const newUser = await User.create({
-                clerkID: id,
-                fullName: `${firstName} ${lastName}`,
+                clerkId: id,
+                fullName: `${firstName || ""} ${lastName || ""}`.trim(),
                 imageUrl: imageUrl
             });
             console.log("New user created:", newUser);
